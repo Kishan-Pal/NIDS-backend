@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import torch
 import torch.nn as nn
 import joblib
 import pandas as pd
 import numpy as np
+
 
 
 # -------------------------
@@ -61,6 +63,7 @@ class_mapping = {0: "Benign", 1: "DoS", 2: "DDoS"}
 # -------------------------
 app = Flask(__name__)
 
+CORS(app)
 
 @app.route("/predict", methods=["POST"])
 def predict():
