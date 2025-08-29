@@ -103,7 +103,7 @@ def predict():
             final_pred = xgb_pred
         else:
             final_pred = nn_pred
-        print(class_mapping[final_pred])
+        # print(class_mapping[final_pred])
         return jsonify({
             "nn_prediction": class_mapping[nn_pred],
             "xgb_prediction": class_mapping[xgb_pred],
