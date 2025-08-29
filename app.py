@@ -65,6 +65,11 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "API is running! Try POST /predict"
+
+
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
